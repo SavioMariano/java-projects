@@ -1,6 +1,6 @@
 public class Vetor3 {
     public static void main(String[] args){
-    String[] Words = {"Sávio", "Wendel", "Larissa"};
+    String[] Words = {"Monkey","Paralelepípedo"};
     for (String word: Words){
     System.out.println("no nome " + word + " existem essas vogais: " );
     String vogais = word.replaceAll( "[^áéíóúaeiouAEIOU]", "");  //Substitui todas as consoantes por ""
