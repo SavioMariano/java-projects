@@ -1,5 +1,4 @@
 package ATV_JAVA;
-
 public class Car {
     private String car_Brand;  //marca do carro
     private String car_Model;  // modelo do carro
@@ -13,8 +12,7 @@ public class Car {
 
     public static void main(String[] args) {
         Car car1 = new Car("Fiat", "Argo", 50);
-        System.out.println(car1.accelerate());
-
+        car1.accelerate();
         System.out.println(car1.information());
     }
 
@@ -23,14 +21,13 @@ public class Car {
         return "Marca do carro é " + this.car_Brand + " seu modelo é " + car_Model + " e ele está a " + getVelocity() +" km/h"; 
     }
         //metodo de aceleração
-    public int accelerate(){
+    public void accelerate(){
         velocity += 10;
-        return velocity;
+        
     }
         //metodo para freiar o carro.
-    public int Braking(){
+    public void Braking(){
         velocity -= 10;
-        return velocity;
     }
         //metodo get pra pegar a velocidade do carro
     public int getVelocity(){
