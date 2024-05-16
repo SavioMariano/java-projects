@@ -22,14 +22,14 @@ public class BankAccount {
 
 
     public String information(){
-        return "Seu numéro da conta é " + this.numberAccount + " e possui " + balanceInitial + " R$ depositado."  ;
+        return "Seu numéro da conta é " + this.numberAccount + " e possui R$" + balanceInitial + " depositado."  ;
     }
 
 
     public String deposit(double balance){
         if (balance > 0) {
         balanceInitial += balance;
-        return "O senhor(a) "+ this.cardholderName+" depositou o valor de " + balance + " R$";
+        return "O senhor(a) "+ this.cardholderName+" depositou o valor de R$" + balance;
         }else{
             return "Não é possivel efetuar o deposito";
         }
@@ -38,7 +38,7 @@ public class BankAccount {
     public String withdraw(double withdrawMoney){
         if (withdrawMoney < balanceInitial) {
             balanceInitial -= withdrawMoney;
-            return "O senhor(a)" + this.cardholderName + " sacou o valor de " + withdrawMoney + " R$";
+            return "O senhor(a)" + this.cardholderName + " sacou o valor de R$" + withdrawMoney;
         }
         return "Não é posssivel efetuar o saque";
     } 
