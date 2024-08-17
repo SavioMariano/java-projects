@@ -9,4 +9,3 @@ import dio.padroes.projeto.model.Endereco;
 public interface EnderecoRepository extends CrudRepository<Endereco, String> {
     
 }
-

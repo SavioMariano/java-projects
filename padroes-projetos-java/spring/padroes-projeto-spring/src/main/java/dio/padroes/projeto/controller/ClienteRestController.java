@@ -5,40 +5,40 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import dio.padroes.projeto.model.Cliente;
-import dio.padroes.projeto.service.ClienteService;
+import dio.padroes.projeto.service.impl.ClienteServiceImpl;
 
 @RestController
 @RequestMapping("clientes")
 public class ClienteRestController {
 
     @Autowired
-    private ClienteService clienteService;
+    private ClienteServiceImpl clienteServiceImpl;
 
     @GetMapping("/buscarTodos")
     public ResponseEntity<Iterable<Cliente>> buscarTodos() {
-        return ResponseEntity.ok(clienteService.buscarTodos());
+        return ResponseEntity.ok(clienteServiceImpl.buscarTodos());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/buscarPorId")
     public ResponseEntity<Cliente> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(clienteService.buscarPorId(id));
+        return ResponseEntity.ok(clienteServiceImpl.buscarPorId(id));
     }
 
     @PostMapping("/inserir")
     public ResponseEntity<Cliente> inserir(@RequestBody Cliente cliente) {
-        clienteService.inserir(cliente);
+        clienteServiceImpl.inserir(cliente);
         return ResponseEntity.ok(cliente);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/atualizar")
     public ResponseEntity<Cliente> atualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
-        clienteService.atualizar(id, cliente);
+        clienteServiceImpl.atualizar(id, cliente);
         return ResponseEntity.ok(cliente);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        clienteService.deletar(id);
+        clienteServiceImpl.deletar(id);
         return ResponseEntity.ok().build();
     }
 

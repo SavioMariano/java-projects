@@ -1,10 +1,7 @@
 package dio.padroes.projeto.service;
 
-import org.springframework.stereotype.Service;
-
 import dio.padroes.projeto.model.Cliente;
 
-@Service
 public interface ClienteService {
 
     Iterable<Cliente> buscarTodos();
